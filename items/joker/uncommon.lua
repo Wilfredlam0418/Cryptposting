@@ -368,3 +368,52 @@ SMODS.Joker {
 		code = { "wilfredlam0418" }
 	}
 }
+
+SMODS.Joker {
+	key = "issue_with_copper",
+	name = "The Issue with Copper",
+	config = { extra = { state = 1, mult = 15, xmult = 3 } },
+	rarity = 2,
+	atlas = "crp_placeholder",
+	pos = { x = 3, y = 0 },
+	blueprint_compat = true,
+	demicoloncompat = true,
+	pools = { Meme = true },
+	cost = 6,
+	loc_vars = function(self, info_queue, card)
+		return {
+			card.ability.extra.mult,
+			card.ability.extra.xmult,
+			colours = {
+				G.C.RED and card.ability.extra.state == 1 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 2 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 3 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 4 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 5 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 6 or G.C.UI.TEXT_INACTIVE,
+				G.C.RED and card.ability.extra.state == 7 or G.C.UI.TEXT_INACTIVE
+			}
+		}
+	end,
+	calculate = function(self, card, context)
+		if context.joker_main or context.forcetrigger then
+			if card.ability.extra.state <= 3 then
+				return { mult = card.ability.extra.mult }
+			elseif card.ability.extra.state == 7 then
+				return { xmult = card.ability.extra.xmult }
+			end
+		end
+
+		if (context.end_of_round and not context.game_over and context.main_eval and not context.blueprint) or context.forcetrigger then
+			card.ability.extra.state = card.ability.extra.state + 1
+			return {
+				message = "Next state!",
+				colour = G.C.FILTER
+			}
+		end
+	end,
+	crp_credits = {
+		idea = { "wilfredlam0418" },
+		code = { "wilfredlam0418" }
+	}
+}

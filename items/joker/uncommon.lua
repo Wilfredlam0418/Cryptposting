@@ -215,6 +215,39 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+	key = "eye_for_an_eye",
+	name = "E(ye) for an E(ye)",
+	config = { extra = { chips = 10, xmult = 10 } }
+	rarity = 2,
+	atlas = "crp_placeholder",
+	pos = { x = 3, y = 0 },
+	cost = 5,
+	blueprint_compat = true,
+	demicoloncompat = true,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { card.ability.extra.chips, card.ability.extra.xmult } }
+	end,
+	calculate = function(self, card, context)
+		if (context.joker_main) or context.forcetrigger then
+			return {
+				message = "÷" .. lenient_bignum(card.ability.extra.chips) .. " Chips",
+				Xchip_mod = 1 / lenient_bignum(card.ability.extra.chips),
+				colour = G.C.CHIPS,
+				extra = {
+					message = "X" .. lenient_bignum(card.ability.extra.xmult) .. " Mult",
+					Xmult_mod = 1 / lenient_bignum(card.ability.extra.xmult),
+					colour = G.C.MULT,
+				},
+			}
+		end
+	end,
+	crp_credits = {
+		idea = { "SageSeraph" },
+		code = { "wilfredlam0418" }
+	}
+}
+
+SMODS.Joker {
 	key = "tag_hoarder",
 	name = "Tag Hoarder",
 	rarity = 2,

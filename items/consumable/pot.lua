@@ -9,7 +9,6 @@ SMODS.ConsumableType {
 	can_stack = true,
 	can_divide = true
 }
-
 -- Functions on shuffling cards back into the deck
 
 local function shuffle(card_pos)
@@ -44,6 +43,7 @@ local function shuffle_all_highlighted()
 	end
 end
 
+
 SMODS.Consumable {
 	key = "desires",
 	name = "Pot of Desires",
@@ -66,7 +66,6 @@ SMODS.Consumable {
 		code = { "wlfredlam0418" }
 	}
 }
-
 SMODS.Consumable {
 	key = "dichotomy",
 	name = "Pot of Dichotomy",
@@ -113,6 +112,7 @@ SMODS.Consumable {
 		code = { "wlfredlam0418" }
 	}
 }
+
 
 SMODS.Consumable {
 	key = "riches",

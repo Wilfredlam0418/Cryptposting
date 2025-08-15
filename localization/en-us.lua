@@ -70,6 +70,12 @@ return {
 					"All Cryptposting Jokers are debuffed"
 				}
 			},
+			bl_crp_shitpost = {
+				name = "The Shitpost",
+				text = {
+					"All non-Cryptposting Jokers are debuffed"
+				}
+			},
 			bl_crp_balance = {
 				name = "The Balance",
 				text = {
@@ -102,10 +108,22 @@ return {
 					"Planet card used this run"
 				}
 			},
+			bl_crp_hazard = {
+				name = "The Hazard",
+				text = {
+					"Halves all mutable joker values"
+				}
+			},
 			bl_crp_roadblock = {
 				name = "The Roadblock (L+)",
 				text = {
 					"Comically large blind requirement"
+				},
+			},
+			bl_crp_roulette = {
+				name = "The Roulette (L+)",
+				text = {
+					"^1.[1-6] blind size"
 				},
 			},
 			bl_crp_epioxus = {
@@ -134,6 +152,19 @@ return {
 					"^10 Blind size",
 					"Destroys all Legendary+",
 					"jokers upon entering blind"
+				},
+			},
+			bl_crp_hermes = {
+				name = "Hermes (S, EM+)",
+				text = {
+					"^^^1.000001 Blind Size every frame",
+					"Value increases by 0.000001 every frame",
+				},
+			},
+			bl_crp_lacum_draconis = {
+				name = "Lacum Draconis (S, EM+)",
+				text = {
+					"^^^^[1-20] Blind Size",
 				},
 			}
 		},
@@ -715,6 +746,13 @@ return {
 					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult and {C:white,X:mult}X#2#{C:inactive} Mult){}",
 				},
 			},
+			j_crp_q = {
+				name = "q",
+				text = {
+					"{X:chips,C:white}=#1#{} Mult",
+					"Increases by {X:chips,C:white}#2#{} when a {C:attention}Zany Joker{} is sold",
+				},
+			},
 			j_crp_bulgoes_hiking_journey = {
 				name = "{C:edition}Bulgoe{}'s Hiking Journey",
 				text = {
@@ -843,6 +881,14 @@ return {
 					"five minutes later they call my name, {C:attention}one quadrillion jolly jokers"
 				}
 			},
+			j_crp_souper_m = {
+				name = "SOUPER m",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"Gains {X:dark_edition,C:white}^#3#{} Mult when {C:attention}The Duo{} is sold",
+					"{C:inactive}(Currently {X:dark_edition,C:white}^#2#{C:inactive} Mult)",
+				}
+			},
 			j_crp_duplex = {
 				name = "Duplex",
 				text = {
@@ -935,6 +981,19 @@ return {
 					"at end of round",
 				},
 			},
+			j_crp_highest_chip = {
+				name = "The Highest Chip",
+				text = {
+					"{X:dark_edition,C:white}^[Mult]{} Chips",
+					"{C:inactive}Can we get much higher?{}",
+				},
+			},
+			j_crp_2048 = {
+				name = "2048",
+				text = {
+					"{X:dark_edition,C:white}=2^x{} Mult, where x is your current Mult",
+				},
+			},
 			j_crp_hexation_henry = {
 				name = "hexation henry",
 				text = {
@@ -1016,6 +1075,16 @@ return {
 					"{C:dark_edition,X:edition}#1#X#2##3#{} Mult, where {C:dark_edition,X:edition}X{}",
 					"is the number of",
 					"{C:attention}Cryptposting Jokers{} owned",
+				},
+			},
+			j_crp_bulgoelly_west = {
+				name = "Bulgoelly West",
+				text = {
+					"Creates a {C:edition}Negative{} {C:green}Global{} {C:attention}2 of Hearts{} and {C:attention}7 of Hearts{}",
+					"when bought, {C:mult}Hearts{} cannot be {C:attention}debuffed{}",
+					"If played hand contains a {C:attention}2{}, {C:edition,X:dark_edition}^#1#{} current Ante",
+					"If played hand contains a {C:attention}7{}, {C:white,X:attention}X#2#{} current Ante",
+					"If played hand contains a {C:attention}2{} and a {C:attention}7{}, sets Ante to {C:attention}#3#{}"
 				},
 			},
 			j_crp_eternity = {
@@ -1226,7 +1295,7 @@ return {
 			}
 		},
 		Pot = {
-			c_crp_desires = {
+				c_crp_desires = {
 				name = "Pot of Desires",
 				text = {
 					"{C:red}Destroy{} up to {C:attention}#1#{} selected card#<s>1#, then",
@@ -1572,6 +1641,51 @@ return {
 			},
 		},
 		Voucher = {
+			v_crp_reduction = {
+				name = "Reduction",
+				text = {
+					"{X:attention,C:white}X#1#{} Blind Requirement"
+				},
+			},
+			v_crp_pacification = {
+				name = "Pacification",
+				text = {
+					"{X:attention,C:white}X#1#{} Blind Requirement"
+				},
+			},
+			v_crp_domination = {
+				name = "Domination",
+				text = {
+					"{X:attention,C:white}X#1#{} Blind Requirement"
+				},
+			},
+			v_crp_reign = {
+				name = "Reign",
+				text = {
+					"{X:attention,C:white}X#1#{} Blind Requirement"
+				},
+			},
+			v_crp_supremacy = {
+				name = "Supremacy",
+				text = {
+					"All blinds level up all hands by {C:attention}ceil(log64([Blind Size])){} when beaten"
+				},
+			},
+			v_crp_godhood = {
+				name = "Godhood",
+				text = {
+					"Ante increases {C:attention}decrease Ante{} instead",
+					"(Can be toggled in Run Info)",
+					"{C:inactive}(currently doesnt do jack shite because idk how id code that lmao){}"
+				},
+			},
+			v_crp_ascension = {
+				name = "Ascension",
+				text = {
+					"Sets Blind Size to {C:attention}1{}",
+					"All {C:attention}Boss Blinds{} are {C:attention}disabled{}"
+				},
+			},
 			v_crp_patience = {
 				name = "Patience",
 				text = {

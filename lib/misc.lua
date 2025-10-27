@@ -99,4 +99,4 @@ SMODS.Joker:take_ownership("invisible", {
 			}
 		end
 	end
-})
+}, true)

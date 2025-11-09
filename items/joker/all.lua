@@ -1,3 +1,5 @@
+
+
 SMODS.Joker { -- IT'S ALIVE
 	key = "all",
 	name = "All",

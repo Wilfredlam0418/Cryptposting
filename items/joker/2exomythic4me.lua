@@ -299,8 +299,11 @@ SMODS.Joker {
 				lenient_bignum(card.ability.extra.jokeroperator),
 				lenient_bignum(card.ability.extra.jokeroperatormod),
 				colours = { { 0.78, 0.35, 0.52, 1 } },
-				"{",
-				"}"
+				format_arrows(card.ability.extra.chipsmultoperator, card.ability.extra.echipsmult),
+				format_arrows(card.ability.extra.chipsmultoperator, card.ability.extra.echipsmultmod),
+				format_arrows(card.ability.extra.jokeroperator, card.ability.extra.jokerpowmod),
+				format_arrows(card.ability.extra.chipsmultoperator, 0),
+				format_arrows(card.ability.extra.chipsmultoperator, card.ability.extra.echipsmultold)
 			}
 		}
 	end,

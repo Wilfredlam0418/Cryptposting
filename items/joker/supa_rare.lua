@@ -12,8 +12,8 @@ SMODS.Joker {
 	name = "Supagoe",
 	config = { },
 	rarity = "crp_supa_rare",
-	atlas = "crp_placeholder",
-	pos = { x = 3, y = 1 },
+	atlas = "crp_joker2",
+	pos = { x = 5, y = 2 },
 	cost = 2727272727272727272727272727,
 	blueprint_compat = true,
 	demicoloncompat = true,
@@ -29,6 +29,7 @@ SMODS.Joker {
 	end,
 	crp_credits = {
 		idea = { "superb_thing" },
+		art = { "Rainstar" },
 		code = { "Rainstar" }
 	}
 }

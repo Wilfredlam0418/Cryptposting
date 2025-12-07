@@ -64,3 +64,67 @@ SMODS.Joker {
 		custom = { key = "alt", text = "Banner" }
 	}			
 }
+
+SMODS.Joker {
+	key = "jok",
+	name = "jok",
+	config = { extra = { mult = -10 } },
+	rarity = "crp_plentiful",
+	atlas = "crp_joker2",
+	pos = { x = 6, y = 2 },
+	cost = 52,
+	blueprint_compat = true,
+	demicoloncompat = true,
+	no_pool_flag = jok_existent,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { lenient_bignum(card.ability.extra.mult) } }
+	end,
+    set_ability = function(self, card, initial)
+		card.ability.cry_absolute = true
+    end,
+    add_to_deck = function(self, card, from_debuff)
+		G.GAME.pool_flags.jok_existent = true
+    end,
+	calculate = function(self, card, context)
+		if (context.joker_main) or context.forcetrigger then
+			return {
+				mult = lenient_bignum(card.ability.extra.mult)
+			}
+		end
+	end,
+	crp_credits = {
+		idea = { "SageSeraph", "Glitchkat10" },
+		art = { "Unknown" },
+		code = { "Rainstar" },
+		custom = { key = "alt", text = "Cube" }
+	}			
+}
+
+SMODS.Joker {
+	key = "big_jok",
+	name = "BIG JOK",
+	config = { extra = { xmult = 100 } },
+	rarity = "crp_plentiful",
+	atlas = "crp_joker2",
+	pos = { x = 7, y = 2 },
+	cost = 52,
+	blueprint_compat = true,
+	demicoloncompat = true,
+	yes_pool_flag = jok_existent,
+	loc_vars = function(self, info_queue, card)
+		return { vars = { lenient_bignum(card.ability.extra.xmult) } }
+	end,
+	calculate = function(self, card, context)
+		if (context.joker_main) or context.forcetrigger then
+			return {
+				xmult = lenient_bignum(card.ability.extra.xmult)
+			}
+		end
+	end,
+	crp_credits = {
+		idea = { "SageSeraph", "Glitchkat10" },
+		art = { "Unknown" },
+		code = { "Rainstar" },
+		custom = { key = "alt", text = "Big Cube" }
+	}			
+}

@@ -99,4 +99,28 @@ SMODS.Joker:take_ownership("invisible", {
 			}
 		end
 	end
-})
+}, true)
+
+function format_arrows(arrows, value)
+	if arrows <= -4 then
+		return "/" .. value
+	elseif arrows == -3 then
+		return "-" .. value
+	elseif arrows == -2 then
+		return "=" .. value
+	elseif arrows == -1 then
+		return "+" .. value
+	elseif arrows == 0 then
+		return "X" .. value
+	elseif arrows == 1 then
+		return "^" .. value
+	elseif arrows == 2 then
+		return "^^" .. value
+	elseif arrows == 3 then
+		return "^^^" .. value
+	elseif arrows == 4 then
+		return "^^^^" .. value
+	else
+		return "{" .. arrows .. "}" .. value
+	end
+end

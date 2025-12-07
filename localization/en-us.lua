@@ -519,6 +519,18 @@ return {
 					"remaining {C:attention}hand"
 				}
 			},
+			j_crp_jok = {
+				name = "jok",
+				text = {
+					"{C:mult}#1#{} Mult"
+				}
+			},
+			j_crp_big_jok = {
+				name = "BIG JOK",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult"
+				}
+			},
 			j_crp_one_mans_trash = {
 				name = "One Man's Trash",
 				text = {
@@ -1302,22 +1314,21 @@ return {
 			j_crp_eternity = {
 				name = "Eternity",
 				text = {
-					"{C:white,X:dark_edition}#10##6##11##1#{} Chips & Mult",
+					"{C:white,X:dark_edition}#10#{} Chips & Mult",
 					"Every frame, a {C:attention}little bird{} comes to sharpen its beak,",
-					"taking {C:white,X:dark_edition}#10##6##11##2#{}, but gaining {C:white,X:attention}#10##8##11##3#{} to use when shop exited",
-					"When {C:white,X:dark_edition}#10##6##11#0{} reached, resets back to {C:white,X:dark_edition}#10##6##11##4#",
+					"taking {C:white,X:dark_edition}#11#{}, but gaining {C:white,X:attention}#12#{} to apply to all",
+					"jokers when shop exited",
+					"When {C:white,X:dark_edition}#13#{} reached, resets back to {C:white,X:dark_edition}#14#",
 					"{C:red}and a single day of {V:1}eternity {C:red}passes...",
-					"{C:inactive}(Currently giving {C:white,X:attention}#10##8##11##5#{C:inactive} at end of shop)"
+					"{C:inactive}(Currently giving {C:white,X:attention}#14#{C:inactive} at end of shop)"
 				},
 			},
 			j_crp_quetta_m = {
 				name = "Quetta M",
 				text = {
-					"{C:dark_edition,X:edition}#4##1##5##2#{} Mult, {C:red}fixed{} {C:green}13%{} chance",
+					"{C:dark_edition,X:edition}#4#{} Mult, {C:red}fixed{} {C:green}13%{} chance",
 					"for operator to increase by {C:dark_edition,X:edition}+#3#",
 					"when {C:attention}Pair{} is played",
-					"{C:inactive}\"#4#-1#5#\" = \"+\"",
-					"{C:inactive}\"#4#0#5#\" = \"X\"",
 				},
 			},
 			j_crp_obligatory_scaling_operator = {
